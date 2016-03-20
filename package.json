@@ -1,0 +1,25 @@
+{
+  "name": "tic-tac-toe",
+  "version": "0.0.1",
+  "description": "Tic tac toe",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mdzhang/tic-tac-toe.git"
+  },
+  "author": {
+    "name": "Michelle D. Zhang",
+    "email": "zhang.michelle.d@gmail.com",
+    "url": "mdzhang.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mdzhang/tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/mdzhang/tic-tac-toe#readme",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.0.5"
+  },
+  "devDependencies": {}
+}

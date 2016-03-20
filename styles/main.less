@@ -1,0 +1,44 @@
+@primary-color: #319CB6;
+@secondary-color: white;
+
+@tile-height: 150px;
+@tile-margin: 10px;
+@tile-count: 3;
+
+@grid-height: (@tile-height * 3) + (@tile-margin * (@tile-count + 1));
+
+.container {
+
+}
+
+.grid {
+  border: 2px solid @primary-color;
+  height: @grid-height;
+  width: @grid-height;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+
+  &:first-child {
+    .cell {
+      border-top: 10px solid @secondary-color;
+    }
+  }
+}
+
+.cell {
+  height: 150px;
+  width: 150px;
+  background-color: #319CB6;
+  border: 5px solid @secondary-color;
+
+  &:first-child {
+    border-left: 10px solid @secondary-color;
+  }
+
+  &:last-child {
+    border-right: 10px solid @secondary-color;
+  }
+}
