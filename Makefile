@@ -6,7 +6,7 @@ gulp:
 	${GULP}
 
 clean:
-	rm -f styles/main.css
+	rm -rf public/build
 
 open:
 	open index.html

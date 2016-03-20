@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/mdzhang/tic-tac-toe#readme",
   "main": "gulpfile.js",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^13.0.0",
     "gulp": "^3.9.1",
-    "gulp-less": "^3.0.5"
-  },
-  "devDependencies": {}
+    "gulp-less": "^3.0.5",
+    "vinyl-source-stream": "^1.1.0"
+  }
 }
