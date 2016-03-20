@@ -9,6 +9,6 @@ clean:
 	rm -rf public/build
 
 open:
-	open index.html
+	make build & python -m SimpleHTTPServer 8000 & open http://localhost:8000/public/build/
 
 .PHONY: build gulp clean open

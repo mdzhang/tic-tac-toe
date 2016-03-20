@@ -2,7 +2,7 @@
 
 var TTT = {};
 
-TTT.Game = require('./game');
+TTT.Game = require('../game');
 
 window.TTT = TTT;
 

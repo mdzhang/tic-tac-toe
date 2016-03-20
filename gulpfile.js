@@ -3,17 +3,27 @@ var gulp = require('gulp');
 var less = require('gulp-less');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
+var slim = require('gulp-slim');
+
+// compile slim to html
+gulp.task('slim', function() {
+  return gulp.src('public/pages/index.slim')
+    .pipe(slim({
+      pretty: true
+    }))
+    .pipe(gulp.dest('public/build'));
+});
 
 // compile less to css
 gulp.task('less', function() {
-  return gulp.src('styles/*.less')
+  return gulp.src('public/styles/*.less')
     .pipe(less())
     .pipe(gulp.dest('public/build/styles'));
 });
 
 // browserify js files
 gulp.task('js', function() {
-  return browserify('./scripts/core.js')
+  return browserify('./src/browser/core.js')
     .bundle()
     .pipe(source('app.js'))
     .pipe(gulp.dest('public/build/scripts'));
@@ -21,9 +31,10 @@ gulp.task('js', function() {
 
 // watch files for changes
 gulp.task('watch', function() {
-  gulp.watch('styles/*.less', ['less']);
-  gulp.watch('scripts/*.js', ['js']);
+  gulp.watch('public/pages/*.slim', ['slim']);
+  gulp.watch('public/styles/*.less', ['less']);
+  gulp.watch('src/*.js', ['js']);
 });
 
 // default task
-gulp.task('default', ['less', 'js', 'watch']);
+gulp.task('default', ['slim', 'less', 'js', 'watch']);
